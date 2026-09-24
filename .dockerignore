@@ -1,0 +1,7 @@
+node_modules
+client/dist
+scripts
+brand
+.git
+.env
+server/data

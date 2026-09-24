@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://masar-vet.com/sitemap.xml
