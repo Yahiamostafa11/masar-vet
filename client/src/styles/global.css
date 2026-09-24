@@ -69,8 +69,10 @@ html[lang='ar'] .section-head h2 { line-height: 1.35; letter-spacing: 0; }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.16); border-color: #fff; }
 
 /* ---------- Header ---------- */
-.header { position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--head); transition: background 0.35s, box-shadow 0.35s, backdrop-filter 0.35s; }
-.header.scrolled, .header.open { background: rgba(6, 21, 46, 0.82); backdrop-filter: blur(18px) saturate(1.4); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08); }
+.header { position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--head); }
+/* The blur lives on a pseudo-element: backdrop-filter on .header itself would make it the containing block of the fixed mobile menu and shrink the menu to the header bar. */
+.header::before { content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(6, 21, 46, 0.82); backdrop-filter: blur(18px) saturate(1.4); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08); opacity: 0; transition: opacity 0.35s; }
+.header.scrolled::before, .header.open::before { opacity: 1; }
 .header-in { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; z-index: 2; }
 .brand-chip { background: #fff; border-radius: 12px; padding: 5px 9px; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
@@ -91,7 +93,7 @@ html[lang='ar'] .brand-name { letter-spacing: 0; font-size: 1.4rem; }
 @media (max-width: 960px) {
   .burger { display: block; }
   .nav {
-    position: fixed; inset: 0; flex-direction: column; justify-content: center; gap: 22px;
+    position: fixed; inset: 0; height: 100dvh; flex-direction: column; justify-content: center; gap: 22px; overflow-y: auto; padding: var(--head) 24px 32px;
     background: var(--navy-950); opacity: 0; visibility: hidden; transform: translateY(-12px);
     transition: opacity 0.3s, transform 0.4s var(--ease), visibility 0.3s;
   }
