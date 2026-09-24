@@ -32,3 +32,11 @@ docker build -t masar . && docker run -p 3001:3001 -v masar-data:/app/server/dat
 ```
 Or without Docker: `npm ci && npm run build && npm start` (Node 22+), behind a reverse proxy with HTTPS (nginx/Caddy/platform TLS) for `masar-vet.com`.
 Copy `server/.env.example` to `server/.env` and fill in SMTP to have inquiries emailed to info@masar-vet.com (they are always also saved to `server/data/inquiries.jsonl`).
+
+### Hostinger (Node.js Web App)
+hPanel → Websites → Add website → **Node.js Apps** → Import Git repository → `Yahiamostafa11/masar-vet` (branch `main`).
+- Framework: Express.js (or "Other"), Node version: 22 (20 also works)
+- Install: `npm install` · Build command: `npm run build` · Start command: `npm start`
+- Entry file: `server/src/index.js`
+- Environment variables: `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_TO=info@masar-vet.com` (see `server/.env.example`)
+- Connect the domain `masar-vet.com` to this app. If the domain still has an old static "Deploy from GitHub" site, remove that first: it is what serves the 403 page.

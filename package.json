@@ -3,12 +3,21 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "dev": "concurrently -k -n api,web -c green,blue \"npm run dev -w server\" \"npm run dev -w client\"",
     "build": "npm run build -w client",
-    "start": "npm run start -w server",
+    "start": "node server/src/index.js",
     "assets": "node scripts/crop.mjs"
   },
-  "devDependencies": { "concurrently": "^9.1.0" }
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "main": "server/src/index.js",
+  "engines": {
+    "node": ">=20"
+  }
 }
