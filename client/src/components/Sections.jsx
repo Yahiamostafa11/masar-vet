@@ -47,7 +47,7 @@ export function About() {
         </div>
         <Reveal className="about-visual" delay={120}>
           <div className="about-card">
-            <img src="/img/logo-full.webp" width="900" height="900" loading="lazy" decoding="async" alt="Masar logo" />
+            <img src="/img/logo-full.webp" width="900" height="900" loading="lazy" decoding="async" alt={t.brand.legal} />
           </div>
           <blockquote className="about-quote">{a.quote}</blockquote>
         </Reveal>
@@ -170,7 +170,7 @@ export function Footer() {
       </div>
       <div className="container footer-bar">
         <span>
-          © {new Date().getFullYear()} {t.brand.name}. {t.footer.rights}
+          © <span suppressHydrationWarning>{new Date().getFullYear()}</span> {t.brand.legal}. {t.footer.rights} · {t.contact.location}
         </span>
       </div>
     </footer>

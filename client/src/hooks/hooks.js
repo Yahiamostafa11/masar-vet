@@ -5,10 +5,14 @@ const reduced = () => typeof matchMedia === 'function' && matchMedia('(prefers-r
 // Fades an element in the first time it scrolls into view.
 export function useReveal() {
   const ref = useRef(null);
-  const [shown, setShown] = useState(() => reduced() || typeof IntersectionObserver === 'undefined');
+  // Starts visible so the server-rendered HTML (what crawlers read) matches the first client render.
+  // Elements that are below the fold are then hidden and revealed as they scroll into view.
+  const [shown, setShown] = useState(true);
   useEffect(() => {
-    if (shown) return;
+    if (reduced() || typeof IntersectionObserver === 'undefined') return;
     const el = ref.current;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    setShown(false);
     const io = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
@@ -20,7 +24,7 @@ export function useReveal() {
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [shown]);
+  }, []);
   return [ref, shown];
 }
 

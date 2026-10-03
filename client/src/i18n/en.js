@@ -1,9 +1,12 @@
 export default {
-  meta: { title: 'Masar | Bovine & Buffalo Genetics and Veterinary Supplies' },
-  brand: { name: 'MASAR', tagline: 'Veterinary & Animal Reproduction Solutions', slogan: 'Together on the path to success' },
+  meta: {
+    title: 'Masar Vet | Bovine & Buffalo Genetics & Vet Supplies, Egypt',
+    description: 'Masar Vet: imported bovine & buffalo genetics, semen straws, liquid nitrogen tanks, insemination kits and veterinary supplies for farms and veterinarians across Egypt.',
+  },
+  brand: { name: 'MASAR', legal: 'Masar Vet', tagline: 'Veterinary & Animal Reproduction Solutions', slogan: 'Together on the path to success' },
   nav: { home: 'Home', about: 'About', genetics: 'Genetics', products: 'Products', why: 'Why Masar', contact: 'Contact', cta: 'Get in touch', menu: 'Menu', close: 'Close' },
   hero: {
-    eyebrow: 'Bovine & Buffalo Genetics · Veterinary Supplies',
+    eyebrow: 'Masar Vet · Bovine & Buffalo Genetics',
     title: ['Stronger herds start with', 'better genetics.'],
     text: 'Reliable genetics, professional veterinary supplies and practical support, helping farmers and veterinarians improve herd performance and reproductive efficiency.',
     primary: 'Explore products',

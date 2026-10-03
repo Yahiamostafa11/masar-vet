@@ -1,6 +1,8 @@
 node_modules
 dist
+dist-server
 .env
 server/data
 *.log
 .claude
+zij-video-assets

@@ -33,7 +33,7 @@ export default function Products({ onEnquire }) {
             return (
               <button key={x.id} className="product" onClick={() => setSelected(x)}>
                 <span className="product-img">
-                  <img src={x.image} width={x.w} height={x.h} loading="lazy" decoding="async" alt="" />
+                  <img src={x.image} width={x.w} height={x.h} loading="lazy" decoding="async" alt={item.name} />
                 </span>
                 <span className="product-body">
                   <span className="tag">{item.tag}</span>
