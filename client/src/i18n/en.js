@@ -103,6 +103,6 @@ export default {
     info: { phone: 'Phone', email: 'Email', web: 'Website', location: 'Location', whatsapp: 'Chat on WhatsApp' },
     location: 'Cairo, Egypt',
   },
-  footer: { rights: 'All rights reserved.', top: 'Back to top' },
+  footer: { rights: 'All rights reserved.', top: 'Back to top', credit: 'Website by', creditName: 'ZIJ Technologies' },
   lang: { switch: 'العربية', label: 'Switch to Arabic' },
 };

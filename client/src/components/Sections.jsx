@@ -172,6 +172,12 @@ export function Footer() {
         <span>
           © <span suppressHydrationWarning>{new Date().getFullYear()}</span> {t.brand.legal}. {t.footer.rights} · {t.contact.location}
         </span>
+        <span className="credit">
+          {t.footer.credit}{' '}
+          <a href="https://zijtech.com" target="_blank" rel="noopener" title="ZIJ Technologies">
+            {t.footer.creditName}
+          </a>
+        </span>
       </div>
     </footer>
   );

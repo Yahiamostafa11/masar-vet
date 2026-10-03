@@ -103,6 +103,6 @@ export default {
     info: { phone: 'الهاتف', email: 'البريد', web: 'الموقع', location: 'الموقع الجغرافي', whatsapp: 'تحدث عبر واتساب' },
     location: 'القاهرة، مصر',
   },
-  footer: { rights: 'جميع الحقوق محفوظة.', top: 'العودة للأعلى' },
+  footer: { rights: 'جميع الحقوق محفوظة.', top: 'العودة للأعلى', credit: 'تصميم وتطوير', creditName: 'زيج تكنولوجيز' },
   lang: { switch: 'English', label: 'التبديل إلى الإنجليزية' },
 };

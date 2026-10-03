@@ -308,7 +308,9 @@ html[lang='ar'] .footer-brand strong { letter-spacing: 0; font-size: 1.25rem; }
 .footer-slogan { color: var(--green-400); font-weight: 700; font-size: 1.05rem; }
 .to-top { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, 0.25); color: #fff; transition: background 0.25s, transform 0.25s; }
 .to-top:hover { background: var(--green); transform: translateY(-3px); }
-.footer-bar { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-block: 22px; font-size: 0.85rem; }
+.footer-bar { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-block: 22px; font-size: 0.85rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.credit a { color: #d9b46a; font-weight: 700; transition: color 0.2s; }
+.credit a:hover { color: #f0cf8a; text-decoration: underline; }
 
 /* ---------- Motion preferences ---------- */
 @media (prefers-reduced-motion: reduce) {
